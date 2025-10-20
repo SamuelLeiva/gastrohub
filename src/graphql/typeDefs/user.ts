@@ -13,8 +13,22 @@ export const userTypeDefs = gql`
     updatedAt: String!
   }
 
+  type PublicUser {
+    id: ID!
+    name: String!
+    email: String!
+    role: Role!
+    createdAt: String!
+    updatedAt: String!
+  }
+
+  # Response type for registration
   type RegisterResponse {
-    user: User!
+    user: PublicUser!
+    token: String!
+  }
+
+  type LoginResponse {
     token: String!
   }
 
@@ -24,10 +38,11 @@ export const userTypeDefs = gql`
   }
 
   extend type Query {
-    users: [User!]!
+    users: [PublicUser!]!
   }
 
   extend type Mutation {
     register(name: String!, email: String!, password: String!, role: Role): RegisterResponse!
+    login(email: String!, password: String!): LoginResponse! # Returns a JWT token
   }
 `;
