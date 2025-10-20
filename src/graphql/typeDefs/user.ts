@@ -9,8 +9,8 @@ export const userTypeDefs = gql`
     role: Role!
     # orders: [Order!]!
     # reviews: [Review!]!
-    createdAt: String!
-    updatedAt: String!
+    createdAt: Date!
+    updatedAt: Date!
   }
 
   type PublicUser {
@@ -18,8 +18,8 @@ export const userTypeDefs = gql`
     name: String!
     email: String!
     role: Role!
-    createdAt: String!
-    updatedAt: String!
+    createdAt: Date!
+    updatedAt: Date!
   }
 
   # Response type for registration
@@ -39,6 +39,7 @@ export const userTypeDefs = gql`
 
   extend type Query {
     users: [PublicUser!]!
+    me: PublicUser!
   }
 
   extend type Mutation {
