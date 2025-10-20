@@ -5,6 +5,22 @@ export const userTypeDefs = gql`
     id: ID!
     name: String!
     email: String!
+    password: String!
+    role: Role!
+    # orders: [Order!]!
+    # reviews: [Review!]!
+    createdAt: String!
+    updatedAt: String!
+  }
+
+  type RegisterResponse {
+    user: User!
+    token: String!
+  }
+
+  enum Role {
+    COOK
+    CUSTOMER
   }
 
   extend type Query {
@@ -12,6 +28,6 @@ export const userTypeDefs = gql`
   }
 
   extend type Mutation {
-    createUser(name: String!, email: String!, password: String!): User!
+    register(name: String!, email: String!, password: String!, role: Role): RegisterResponse!
   }
 `;
