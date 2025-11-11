@@ -9,3 +9,4 @@ export function validateCreateProductInput(
   if (price <= 0) throw new Error("Price must be greater than 0");
   if (!imageUrl.trim()) throw new Error("Description is required");
 }
+
