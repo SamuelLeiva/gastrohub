@@ -47,5 +47,7 @@ export const productTypeDefs = gql`
 
   extend type Mutation {
     createProduct(name: String!, description: String!, price: Float!, imageUrl: String!, categoryId: String!): PublicProduct!
+    updateProduct(id: ID!, name: String, description: String, price: Float, imageUrl: String, categoryId: String): PublicProduct!
+    deleteProduct(id: ID!): PublicProduct!
   }
 `;
