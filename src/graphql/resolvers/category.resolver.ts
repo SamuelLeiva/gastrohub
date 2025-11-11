@@ -1,6 +1,6 @@
 import { Role } from "@prisma/client";
 import { GraphQLContext } from "../../interfaces/context";
-import { CreateCategoryArgs } from "../inputs/category.input";
+import { CreateCategoryArgs } from "../inputs/category.inputs";
 import { validateCreateCategoryInput } from "../validators/category.validator";
 import { GraphQLError } from "graphql";
 
