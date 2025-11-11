@@ -9,6 +9,12 @@ export const productResolvers = {
     products: async (_: unknown, __: unknown, { prisma }: GraphQLContext) => {
       return prisma.product.findMany();
     },
+    product: async (_: unknown, args: any, { prisma }: GraphQLContext) => {
+      return prisma.product.findUnique({
+        where: { id: args.id },
+        include: { category: true },
+      });
+    },
   },
   Mutation: {
     createProduct: async (

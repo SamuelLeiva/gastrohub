@@ -23,6 +23,15 @@ export const productTypeDefs = gql`
     #reviews: [Review!]!
   }
 
+  type DetailedProduct {
+    id: ID!
+    name: String!
+    description: String!
+    price: Float!
+    imageUrl: String!
+    category: Category!
+  }
+
   type CreateProduct {
     name: String!
     description: String!
@@ -32,7 +41,8 @@ export const productTypeDefs = gql`
   }
 
   extend type Query {
-    products: [PublicProduct]
+    products: [PublicProduct!]!
+    product(id: ID!): DetailedProduct!
   }
 
   extend type Mutation {
