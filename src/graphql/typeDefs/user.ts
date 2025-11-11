@@ -35,6 +35,7 @@ export const userTypeDefs = gql`
   enum Role {
     COOK
     CUSTOMER
+    ADMIN
   }
 
   extend type Query {
