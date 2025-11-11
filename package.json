@@ -2,9 +2,8 @@
   "name": "gastrohub-graphql",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/app.ts",
     "build": "tsc",
     "start": "npx prisma migrate deploy && node dist/server.js",
     "generate": "prisma generate --schema=src/infrastructure/db/schema.prisma",

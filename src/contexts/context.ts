@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client/extension";
-import { prisma } from "../infrastructure/db/client";
+import { prisma } from "../db/client";
 import { User } from "@prisma/client";
 import jwt from "jsonwebtoken";
 
